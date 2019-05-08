@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Yikes...</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+  </head>
+  <body onLoad="ready()">
+    <div class="ui grid container centered">
+      <div class="eight wide column centered">
+        <h1>Yikes, that's an error!</h1>
+        <p>
+          <ul>
+            <li><a href="/">Return to home page</a></li>
+          </ul>
+        </p>
+        <img width="500" src="https://http.cat/<%= error.status %>" alt="<%= error.status %>" />
+        <pre><%= error.stack %></pre>
+      </div>
+      </div>
+    </div>
+      <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+  </body>
+</html>

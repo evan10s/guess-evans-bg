@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+  </head>
+  <body onLoad="ready()">
+    <div class="ui grid container centered">
+      <div class="eight wide column centered">
+        <h1>What is Evan's blood sugar?</h1>
+          <h2><%= guessPhrase %></h2>
+          <h3><em><%= commentPhrase %></em></h3>
+          <div id="bg-container" class="ui massive right labeled input">
+              <input type="number" id="bg" min="40" max="400"/>
+              <div class="ui label">
+                mg/dL
+              </div>
+          </div>
+          <div class="ui negative message hidden" id="enter-a-bg">
+            <p>Oopsies!  Please enter a blood sugar between 40 and 400 mg/dL before guessing!</p>
+          </div>
+          
+          <button onClick="check()" class="ui massive right labeled icon button" id="submit-btn">
+              <i class="arrow right icon"></i>
+              Guess!
+          </button>
+          <small>Hint: The answer is between 40 and 400 mg/dL, inclusive.</small>
+          <div class="ui icon message hidden" id="result-container">
+            <i id="result-icon" class="icon"></i>
+            <div class="content">
+              <h1 id="score" class="inline"></h1><h4 class="inline">/100</h4>
+              <h3 id="result"></h3>
+              <div class="ui progress" data-value="0" id="guess-accuracy">
+                  <div class="bar">
+                    <div class="progress"></div>
+                  </div>
+              </div>
+              <h4 id="hint"></h4>
+              <h4 id="correct-notice">Within the next 5 minutes, Evan will have a new blood sugar and you can play again!</h4>
+              <p id="high-info">For Evan, <span id="bg"></span> mg/dL is a high blood sugar.  <a href="https://www.jdrf.org/t1d-resources/about/symptoms/high-blood-sugar/">Learn more about high blood sugar.</a></p>
+              <p id="normal-info">For Evan, <span id="bg"></span> mg/dL is normal.*  Woohoo!</p>
+              <p id="low-info">For Evan, <span id="bg"></span> mg/dL is a low blood sugar.  <a href="https://www.jdrf.org/t1d-resources/about/symptoms/low-blood-sugar/">Learn more about low blood sugar.</a></p>
+              <small id="info-disclaimer">This isn't medical advice, just commentary.</small>
+            </div>
+          </div>
+          <div class="ui warning message hidden" id="rate-limit-container">
+            <p>Slow down, please.  Take the time to ponder your next guess!</p>
+          </div>
+          <div class="ui icon info message hidden" id="no-data-container">
+            <i class="icon frown outline"></i>
+            <div class="content">
+              <h1>No data</h1>
+              <p>We can't check your guess because Evan's latest blood sugar isn't available.  Check back in a couple hours.</p>
+            </div>
+          </div>
+          <div class="ui message">
+            <h1>FAQ</h1>
+            <p>
+              <ul>
+                <li>
+                  <h4>What is type one diabetes?</h4>
+                  <p>Type one diabetes (T1D) is an autoimmune disease.  In people with T1D, the body has mistakenly killed most of the cells in 
+                  the pancreas that produce insulin.  We're left to do what our pancreases can’t, and that’s no easy task.  
+                  Each day, we run a crazy dance of fingerstick blood sugar checks, carbohydrate counting, and insulin doses.
+                  <a href="https://www.jdrf.org/t1d-resources/about/">Learn more.</a></p>
+                </li><br />
+                <li>
+                  <h4>How can I help?</h4>
+                  <p>Here's a few ways you can learn more about type one diabetes and support type one diabetes research to find a cure:</p>
+                  <ul>
+                    <li><a href="https://www.jdrf.org/donate/">Donate to JDRF</a></li>
+                    <li>Ask a friend who lives with type one diabetes to tell you about it</li>
+                    <li><a href="https://www2.jdrf.org/site/SPageServer?pagename=walk_homepage">Join a JDRF One Walk to Cure Diabetes Team</a></li>
+                    <li><a href="https://www.jdrf.org/impact/advocacy/insulin-access/">Support efforts to lower insulin prices in the US</a></li>
+                  <ul>
+                </li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="ui footer">
+      <p>Made with &lt;3 by 🤖.</p>
+      <p>Nothing on this site is supposed to be construed as medical advice.  Talk to your doctor about those topics.</p>
+      <p>JDRF does not sponsor, authorize, or endorse any of the content on this website.</p>
+      </footer>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="/js/guess.js"></script>
+  </body>
+</html>

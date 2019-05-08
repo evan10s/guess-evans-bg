@@ -1,0 +1,35 @@
+body {
+  padding: 50px !important;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#submit-btn {
+  margin-top: 15px;
+  display: block;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.inline {
+  display: inline;
+}
+
+footer {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* from SO */
+::-webkit-input-placeholder { transition : opacity 0.25s; }
+::-moz-placeholder { transition : opacity 0.25s; }
+:-ms-input-placeholder { transition : opacity 0.25s; }
+.fade::-webkit-input-placeholder { opacity : 0; }
+.fade::-moz-placeholder { opacity : 0; }
+.fade:-ms-input-placeholder { opacity : 0; }
