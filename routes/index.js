@@ -19,7 +19,7 @@ function calculateScore(percentError, correctPoints, bias) {
     return 100;
   }
   const randomBias = Math.floor(Math.random()*(5 + 5) - 5)
-  return Math.min(100, Math.max(correctPoints/(Math.exp(bias*percentError)) + randomBias, 0));
+  return Math.min(99, Math.max(correctPoints/(Math.exp(bias*percentError)) + randomBias, 0));
 }
 
 /* GET home page. */
