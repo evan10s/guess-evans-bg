@@ -136,7 +136,7 @@ router.post('/api/v1/check', async function(req, res, next) {
     noData: false,
     result: result,
     hint: hint,
-    score: Math.round(calculateScore(Math.abs(error), 100, 6.7182))
+    score: Math.round(calculateScore(Math.abs(error), 100, 2.2))
   }));
 })
 
